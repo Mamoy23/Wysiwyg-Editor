@@ -4,11 +4,12 @@ $(document).ready(function(){
     createToolbar();
     createButtons();
     getSelectedContent();
-})
+});
 
-function createToolbar(){
+function createToolbar() {
     $('body').prepend('<div>');
     $('div').attr('id', 'toolbar');
+
 }
 
 function createButtons(){
@@ -40,13 +41,4 @@ function getSelectedContent(){
         //$(lol).html('<span style="text-decoration: underline;">')
         //$(lol).addClass('underline');
     }); 
-}
-
-
-// let selobj = window.getSelection();
-// let seltext = selobj.toString();
-// $('#underline').click(function(){
-//     alert(selobj);
-//     console.log(seltext);
-//    $(selobj).css('text-decoration', 'underline');
-// })
+};
