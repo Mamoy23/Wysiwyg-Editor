@@ -7,8 +7,8 @@ $(document).ready(function(){
 });
 
 function createToolbar() {
-    $('body').prepend('<div>');
-    $('div').attr('id', 'toolbar');
+    $('body').prepend('<div id="toolbar">');
+    $('body').append('<div id="container">');
 
 }
 
@@ -19,12 +19,19 @@ function createButtons(){
 }
 
 function getSelectedContent(){
-    document.designMode ='on';
-    $('#textarea').focus();
+    //let content = $('#textearea').val();
+    //$('#textarea').append('p');
+    //$('p').val(content);
+    //document.designMode = 'on';
+    $('#textarea').css('display', 'none');
+    $('#container').attr('contenteditable', 'true');
+    $('#container').css({'border': '1px solid black', 'width': '500px','height': '500px'});
+    $('#container').focus();
     $('#underline').click(function(e){
+        //console.log(content);
         e.preventDefault();
         document.execCommand('underline', false, null);
-        $('#textarea').focus();
+        $('#container').focus();
         return false;
         // let textarea = $("#textarea");
         // let start = textarea[0].selectionStart;
