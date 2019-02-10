@@ -10,7 +10,7 @@
             border : '1px solid grey',
             bg_color : 'white',
         }, options);
-
+        
         $('body').prepend('<div id="container">');
         $('body').prepend('<div id="toolbar">');
         $('body').prepend('<h1>');
@@ -147,7 +147,6 @@
             });
         };
         if($.inArray('html', settings.buttons) != -1){
-
             $('#toolbar').append('<button id="html">');
             $('#html').text('</>');
             $('#html').attr('title', 'Switcher vers HTML');
@@ -180,7 +179,7 @@
                 e.preventDefault();
                 document.execCommand('outdent', false, null);
             });
-        };      
+        };
         $('button, select, input').css({'margin': '2px', 'padding': '6px', 'background-color': 'transparent', 'border': '1px solid grey', 'border-radius': '4px'});
         $('input').css({'padding': '2px'});
         $('select').css({'padding': '5px'});
@@ -190,5 +189,5 @@
         $("button, select, input").mouseout(function(){
             $(this).css("background-color", "transparent");
         });
-    }
+    };
 }(jQuery));
