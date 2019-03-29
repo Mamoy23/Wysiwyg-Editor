@@ -180,6 +180,16 @@
                 document.execCommand('outdent', false, null);
             });
         };
+        if($.inArray('video', settings.buttons) != -1){
+            $('#toolbar').append('<button id="video">');
+            $('#video').text('⥢');
+            $('#video').attr('title', 'Diminuer le trait');
+            $('#video').click(function(e){
+                e.preventDefault();
+                document.execCommand('outdent', false, null);
+            });
+        };
+
         $('button, select, input').css({'margin': '2px', 'padding': '6px', 'background-color': 'transparent', 'border': '1px solid grey', 'border-radius': '4px'});
         $('input').css({'padding': '2px'});
         $('select').css({'padding': '5px'});
@@ -190,4 +200,8 @@
             $(this).css("background-color", "transparent");
         });
     };
+
+    $(document).ready(function(){
+        $('body').my_wysiwyg({buttons : ['bold', 'italic', 'color', 'underline', 'barre', 'fontsize', 'align-justify', 'align-left', 'align-right', 'link', 'unlink', 'html', 'indent', 'outdent', 'video'], largeur :'550px', hauteur: '300px'});
+    });
 }(jQuery));
